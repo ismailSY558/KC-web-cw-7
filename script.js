@@ -3,21 +3,23 @@ function BMI (weight = 80,height = 1.80 ){
     return result;
 }
 console.log(BMI(weight,height));
-console.log(BMI);
+console.log(BMI());
 
 
 function Status (bmi){
 if (bmi < 18.5){
-    return(" لديك نقص في الوزن")
-    
+    document.getElementById("result").style.color = "orange";
+    return(" لديك نقص في الوزن")   
 } 
 
 else if (bmi >= 18.5 && bmi < 25){
+    document.getElementById("result").style.color = "green";
     return("وزنك صحي")
 }
+
 else{
-    return("لديك زيادة في الوزن")
-    
+    document.getElementById("result").style.color = "red";
+    return("لديك زيادة في الوزن")    
 }
 }
 
@@ -30,9 +32,5 @@ function calculate (){
     let desc = Status(bmi);
 
     let div = document.getElementById("result");
-    div.innerText = bmi + "==" +desc 
-    
-    
-
-
+    div.innerText = bmi + "==" +desc             
 }
